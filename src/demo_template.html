@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Context-Gated Retrieval Replay</title>
+<style>
+:root{
+  --bg:#f6f7f9; --panel:#ffffff; --ink:#1b2430; --mute:#6b7787; --line:#dfe3ea;
+  --accent:#1f6feb; --ok:#1a7f4b; --bad:#c0392b; --warn:#b7791f; --skip:#9aa4b2;
+  --chipbg:#eef2f7; --glow:rgba(31,111,235,.18);
+  --t0:#2a9d8f; --t1:#e76f51; --t2:#6c5ce7; --t3:#e9a820; --t4:#0984e3; --t5:#d63384; --t6:#5c8a3a; --t7:#7f8c8d;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#10151c; --panel:#18202b; --ink:#e6ebf2; --mute:#93a0b2; --line:#2a3544;
+    --accent:#58a6ff; --ok:#3fb97a; --bad:#ff7b72; --warn:#e3b341; --skip:#6b7787; --chipbg:#222d3b; --glow:rgba(88,166,255,.2);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#10151c; --panel:#18202b; --ink:#e6ebf2; --mute:#93a0b2; --line:#2a3544;
+  --accent:#58a6ff; --ok:#3fb97a; --bad:#ff7b72; --warn:#e3b341; --skip:#6b7787; --chipbg:#222d3b; --glow:rgba(88,166,255,.2);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{padding:16px;max-width:1280px;margin:0 auto}
+h1{font-size:20px;margin:0 0 2px}
+.sub{color:var(--mute);font-size:13px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+button,select{font:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer}
+button:hover{border-color:var(--accent)}
+button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.variants{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px 12px;min-width:120px}
+.stat b{display:block;font-size:18px}
+.stat span{color:var(--mute);font-size:12px}
+main{max-width:1280px;margin:0 auto;padding:0 16px 32px;display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:14px}
+@media (max-width:980px){main{grid-template-columns:1fr}}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px;min-height:200px}
+.panel h2{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin:0 0 8px}
+#stream{max-height:560px;overflow:auto;display:flex;flex-direction:column;gap:6px;scroll-behavior:smooth}
+.ev{border:1px solid var(--line);border-radius:10px;padding:6px 10px;font-size:13px;background:var(--panel);transition:all .35s;opacity:.0;transform:translateY(8px)}
+.ev.show{opacity:1;transform:none}
+.ev.cur{border-color:var(--accent);box-shadow:0 0 0 4px var(--glow)}
+.ev.user{margin-right:34px}
+.ev.sys{margin-left:34px;background:var(--chipbg)}
+.ev small{color:var(--mute);display:block;font-size:11px}
+.ev.skipped{opacity:.45}
+.chip{display:inline-block;border-radius:99px;padding:1px 8px;font-size:11px;background:var(--chipbg);border:1px solid var(--line);margin-right:4px}
+.chip.ok{color:var(--ok);border-color:var(--ok)} .chip.bad{color:var(--bad);border-color:var(--bad)} .chip.skip{color:var(--skip)} .chip.warn{color:var(--warn);border-color:var(--warn)}
+.stage{border:1px solid var(--line);border-radius:12px;padding:8px 10px;margin-bottom:8px;transition:all .3s;position:relative}
+.stage h3{margin:0;font-size:13px;display:flex;justify-content:space-between;gap:8px}
+.stage .body{font-size:12.5px;color:var(--mute);margin-top:4px;min-height:18px;word-break:break-word}
+.stage.active{border-color:var(--accent);box-shadow:0 0 0 4px var(--glow)}
+.stage.off{background:repeating-linear-gradient(45deg,transparent 0 8px,var(--chipbg) 8px 16px);opacity:.75}
+.stage.off h3::after{content:"layer removed";font-weight:400;color:var(--bad);font-size:11px}
+.stage .num{display:inline-block;width:20px;height:20px;border-radius:50%;background:var(--accent);color:#fff;text-align:center;font-size:11px;line-height:20px;margin-right:6px}
+.doc{display:flex;gap:6px;align-items:flex-start;margin-top:3px;color:var(--ink)}
+.lane{border-left:5px solid var(--skip);padding:6px 8px;margin-bottom:8px;border-radius:0 10px 10px 0;background:var(--chipbg)}
+.lane b{font-size:13px}
+.dots{display:flex;flex-wrap:wrap;gap:3px;margin-top:5px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--skip)}
+.dot.n{border-radius:2px}
+.empty{color:var(--mute);font-size:12px}
+footer{max-width:1280px;margin:0 auto;padding:0 16px 24px;color:var(--mute);font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Context-gated retrieval — live replay</h1>
+  <div class="sub">A real held-out customer stream (<span id="uid"></span>) pushed event-by-event through the pipeline. Switch the variant to see what breaks when a layer is removed. All data is synthetic.</div>
+  <div class="variants" id="variants" role="group" aria-label="Pipeline variant"></div>
+  <div class="bar">
+    <button id="play">Pause</button><button id="step">Step</button><button id="reset">Restart</button>
+    <label class="sub">speed <select id="speed"><option value="1.6">0.6x</option><option value="1" selected>1x</option><option value="0.5">2x</option><option value="0.25">4x</option></select></label>
+    <span class="sub" id="pos"></span>
+  </div>
+  <div class="stats">
+    <div class="stat"><b id="s_ev">0</b><span>events seen</span></div>
+    <div class="stat"><b id="s_calls">0</b><span>retrieval calls</span></div>
+    <div class="stat"><b id="s_waste">0</b><span>wasted calls (noise)</span></div>
+    <div class="stat"><b id="s_acc">–</b><span>correct @1 (of questions)</span></div>
+  </div>
+</header>
+<main>
+  <section class="panel"><h2>Incoming stream (messages + notifications)</h2><div id="stream"></div></section>
+  <section class="panel"><h2>Pipeline for the current event</h2>
+    <div class="stage" id="st1"><h3><span><span class="num">1</span>Gate</span><span id="g1"></span></h3><div class="body" id="b1"></div></div>
+    <div class="stage" id="st2"><h3><span><span class="num">2</span>Task clusters</span><span id="g2"></span></h3><div class="body" id="b2"></div></div>
+    <div class="stage" id="st3"><h3><span><span class="num">3</span>Constraint slots</span><span id="g3"></span></h3><div class="body" id="b3"></div></div>
+    <div class="stage" id="st4"><h3><span><span class="num">4</span>Query builder</span><span id="g4"></span></h3><div class="body" id="b4"></div></div>
+    <div class="stage" id="st5"><h3><span><span class="num">5</span>Search + filters</span><span id="g5"></span></h3><div class="body" id="b5"></div></div>
+  </section>
+  <section class="panel"><h2>Task memory (per user)</h2><div id="lanes"><div class="empty">No tasks yet.</div></div></section>
+</main>
+<footer>Variants are replays of the same stream under different pipeline configurations (Qwen3-Embedding-0.6B + BM25 hybrid, everything on-premises).</footer>
+<script>
+/*__DATA__*/
+const TASKCOL=["--t0","--t1","--t2","--t3","--t4","--t5","--t6","--t7"];
+const OFF={full:[],nogate:[1],notasks:[2],noconstr:[3],nonotif:[],naive:[1,2,3]};
+let variant="full", i=-1, playing=true, timer=null, speed=1;
+const $=id=>document.getElementById(id);
+$("uid").textContent=USER;
+function esc(s){return String(s==null?"":s).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]))}
+function buildVariants(){
+  const v=$("variants"); v.innerHTML="";
+  Object.keys(DATA).forEach(k=>{
+    const b=document.createElement("button"); b.textContent=DATA[k].label; b.className=k===variant?"on":""; b.onclick=()=>{variant=k;reset();buildVariants();}; v.appendChild(b);
+  });
+}
+function reset(){ i=-1; $("stream").innerHTML=""; $("lanes").innerHTML='<div class="empty">No tasks yet.</div>'; clearStages(); stats(); schedule(); }
+function clearStages(){ for(let k=1;k<=5;k++){ $("b"+k).innerHTML=""; $("g"+k).innerHTML=""; $("st"+k).classList.remove("active"); $("st"+k).classList.toggle("off",(OFF[variant]||[]).includes(k)); } }
+function ev(){return DATA[variant].events}
+function stats(){
+  const E=ev().slice(0,i+1);
+  $("s_ev").textContent=E.length;
+  $("s_calls").textContent=E.filter(e=>e.retrieve).length;
+  $("s_waste").textContent=E.filter(e=>e.retrieve&&!e.want).length;
+  const q=E.filter(e=>e.want); const ok=q.filter(e=>e.hit).length;
+  $("s_acc").textContent=q.length?(ok+"/"+q.length):"–";
+  $("pos").textContent=(i+1)+" / "+ev().length;
+}
+const sleep=ms=>new Promise(r=>setTimeout(r,ms*speed));
+async function stage(k,html,tag){ const s=$("st"+k); s.classList.add("active"); $("b"+k).innerHTML=html; $("g"+k).innerHTML=tag||""; await sleep(380); s.classList.remove("active"); }
+function chip(t,c){return '<span class="chip '+(c||"")+'">'+esc(t)+'</span>'}
+async function process(){
+  const e=ev()[i]; const off=OFF[variant]||[];
+  // stream card
+  const card=document.createElement("div"); const sys=e.src!=="user";
+  card.className="ev "+(sys?"sys":"user")+" cur";
+  card.innerHTML='<small>'+esc(e.ts)+' · '+esc(e.src)+'</small>'+esc(e.text);
+  $("stream").appendChild(card); requestAnimationFrame(()=>card.classList.add("show")); $("stream").scrollTop=1e6;
+  stats(); clearStages();
+  // 1 gate
+  let g;
+  if(off.includes(1)){ g=chip("no gate → treat as question","warn"); }
+  else if(e.pred==="social"||e.pred==="offtopic"){ g=chip(e.pred,"skip")+chip("SKIP retrieval","skip"); }
+  else if(e.pred==="notif_noise"){ g=chip("noise notification","skip")+chip("quarantined","skip"); }
+  else if(e.pred==="notif_transactional"){ g=chip("service notification","ok")+chip("buffered as candidate task seed","ok"); }
+  else if(e.pred==="statement"){ g=chip("statement","ok")+chip("update memory only"); }
+  else g=chip("question","ok")+chip("RETRIEVE","ok");
+  await stage(1,g,"");
+  const proceed=e.retrieve||e.pred==="statement"||e.pred==="notif_transactional";
+  // 2 task
+  if(proceed||off.includes(1)){
+    let t = off.includes(2) ? chip("single rolling context","warn") : (e.task==null? chip("no task yet","skip"): chip("task "+e.task,"ok")+chip(e.fam||""));
+    if(e.pred==="notif_transactional") t=chip("held until a task claims it");
+    await stage(2,t);
+    let c = off.includes(3) ? chip("no persistent slots","warn") : (e.prod? chip("product = "+e.prod,"ok")+chip("from "+e.psrc):chip("product unknown","skip"));
+    await stage(3,c);
+    if(e.retrieve){
+      await stage(4,'<code>'+esc(e.q)+'</code>');
+      let docs=e.top.map(d=>'<div class="doc">'+(e.want?(d.ok?'<span class="chip ok">✓</span>':'<span class="chip bad">✗</span>'):'<span class="chip skip">–</span>')+'<span>'+esc(d.title)+'</span></div>').join("");
+      if(e.want) docs+='<div class="doc"><span class="chip">gold</span><span>'+esc(e.gold.join(" ; "))+'</span></div>';
+      else docs='<div class="doc"><span class="chip warn">wasted call</span><span>this event needed no retrieval</span></div>'+docs;
+      await stage(5,docs, e.want?(e.hit?chip("correct @1","ok"):chip("miss","bad")):"");
+    } else { await stage(4,'<span class="empty">no query built</span>'); await stage(5,'<span class="empty">search not run</span>'); }
+  } else {
+    for(let k=2;k<=5;k++){ $("b"+k).innerHTML='<span class="empty">skipped</span>'; }
+    await sleep(250);
+  }
+  card.classList.remove("cur"); if(!e.retrieve&&!proceed) card.classList.add("skipped");
+  lanes();
+}
+function lanes(){
+  const E=ev().slice(0,i+1); const by={};
+  E.forEach(e=>{ if(e.task!=null && e.pred!=="social" && e.pred!=="offtopic"){ (by[e.task]=by[e.task]||[]).push(e);} });
+  const keys=Object.keys(by); if(!keys.length) return;
+  $("lanes").innerHTML=keys.map(k=>{ const L=by[k]; const prod=[...L].reverse().find(x=>x.prod);
+    return '<div class="lane" style="border-color:var('+TASKCOL[k%8]+')"><b>Task '+k+'</b> '+chip(L[0].fam||"")+(prod?chip("product: "+prod.prod,"ok"):chip("product ?","skip"))+
+    '<div class="dots">'+L.map(x=>'<span class="dot'+(x.src!=="user"?" n":"")+'" style="background:var('+TASKCOL[k%8]+')" title="'+esc(x.text)+'"></span>').join("")+'</div></div>'; }).join("");
+}
+let busy=false;
+async function tick(){
+  if(busy) return; busy=true;
+  if(i<ev().length-1){ i++; await process(); } else { playing=false; $("play").textContent="Replay"; }
+  busy=false; if(playing) schedule();
+}
+function schedule(){ clearTimeout(timer); if(playing) timer=setTimeout(tick,350*speed); }
+$("play").onclick=()=>{ if(i>=ev().length-1){reset(); playing=true; $("play").textContent="Pause"; return;} playing=!playing; $("play").textContent=playing?"Pause":"Play"; schedule(); };
+$("step").onclick=()=>{ playing=false; $("play").textContent="Play"; tick(); };
+$("reset").onclick=()=>{ playing=true; $("play").textContent="Pause"; reset(); };
+$("speed").onchange=e=>{ speed=parseFloat(e.target.value); };
+buildVariants(); reset();
+</script>
+</body>
+</html>

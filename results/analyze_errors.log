@@ -1,0 +1,46 @@
+{'R@1': 0.783, 'R@3': 0.913, 'R@5': 0.939, 'R@10': 0.95, 'MRR@10': 0.85, 'nDCG@10': 0.875, 'gate_precision': 0.947, 'gate_recall': 1.0, 'gate_f1': 0.973, 'calls_per_100_events': 47.883, 'etype_acc': 0.968, 'notif_acc': 0.914, 'task_ARI': 0.798, 'product_acc': 0.869, 'ms_p50': 0.903, 'ms_p95': 5.534, 'wall_s': 4.81}
+implicit {'R@1': 0.824, 'R@3': 0.929, 'R@5': 0.957, 'R@10': 0.965, 'MRR@10': 0.878, 'nDCG@10': 0.9, 'n': 603}
+explicit {'R@1': 0.748, 'R@3': 0.927, 'R@5': 0.951, 'R@10': 0.967, 'MRR@10': 0.838, 'nDCG@10': 0.87, 'n': 123}
+notif_ref {'R@1': 0.491, 'R@3': 0.818, 'R@5': 0.836, 'R@10': 0.836, 'MRR@10': 0.656, 'nDCG@10': 0.703, 'n': 55}
+switch_product {'R@1': 0.611, 'R@3': 0.667, 'R@5': 0.667, 'R@10': 0.722, 'MRR@10': 0.647, 'nDCG@10': 0.665, 'n': 18}
+correction {'R@1': 0.5, 'R@3': 0.5, 'R@5': 0.5, 'R@10': 0.75, 'MRR@10': 0.528, 'nDCG@10': 0.575, 'n': 4}
+
+== implicit 106
+   ('kya main thoda paisa nikal sakta hoon?', 'partial_withdrawal:ulip', 'payment_modes:ulip', 'ulip', 'ulip', 'query', 'kya main thoda paisa nikal sakta hoon?')
+   ('sorry got distracted. About tax - tax mein kitni chhoot milti hai?', 'tax_benefit:ulip', 'tax_on_maturity:ulip', 'ulip', 'ulip', 'query', 'sorry got distracted. About tax - tax mein kitni chhoot milti hai?')
+   ('which add-on covers can I attach to the base plan', 'riders:term', 'misc:021', None, 'term', 'query', 'which add-on covers can I attach to the base plan')
+   ('how much tax saving can I claim', 'tax_benefit:mf', 'misc:015', 'mf', 'mf', 'query', 'how much tax saving can I claim')
+   ('does it qualify for 80C deduction', 'tax_benefit:pension', 'tax_certificate:all', 'pension', 'pension', 'query', 'does it qualify for 80C deduction')
+   ('what is the tax on the payout at the end', 'tax_on_maturity:pension', 'tax_benefit:pension', 'pension', 'pension', 'query', 'what is the tax on the payout at the end')
+   ('what is the revival period and what do I need to submit', 'revival:endow', 'revival:pension', 'pension', 'endow', 'query', 'what is the revival period and what do I need to submit')
+
+== explicit 31
+   ('i have a mf sip. need premium receipt for income tax return', 'tax_certificate:all', 'statement_download:all', 'mf', 'mf', 'query', 'i have a mf sip. need premium receipt for income tax return')
+   ('I have a pension plan. 10(10D) exemption applicable for me?', 'tax_on_maturity:pension', 'policy_loan:pension', 'pension', 'pension', 'query', 'I have a pension plan. 10(10D) exemption applicable for me?')
+   ('can I download the e-policy copy for the pension plan', 'duplicate_bond:all', 'statement_download:all', None, 'pension', 'query', 'can I download the e-policy copy for the pension plan')
+   ('I have a MF SIP. what is the fund management charge', 'charges:mf', 'sip_start:mf', 'mf', 'mf', 'query', 'I have a MF SIP. what is the fund management charge')
+   ('my pan is not updated, what to do for the pension plan', 'pan_link:all', 'tax_certificate:all', 'pension', 'pension', 'query', 'does it qualify for 80C deduction')
+   ('my claim was rejected, what can I do? for the retirement plan', 'claim_rejection_appeal:all', 'claim_tat:pension', None, 'pension', 'query', 'my claim was rejected, what can I do? for the retirement plan')
+   ('tax mein kitni chhoot milti hai? (this is for my retirement policy)', 'tax_benefit:pension', 'tax_on_maturity:pension', 'pension', 'pension', 'query', 'tax mein kitni chhoot milti hai? (this is for my retirement policy)')
+
+== notif_ref 28
+   ('why did my value change like this?', 'fund_value_nav:ulip', 'charges:ulip', 'ulip', 'ulip', 'query', 'why did my value change like this? Update: your Wealth ULIP fund value as on 06 ')
+   ('can I pay this online?', 'payment_modes:endow', 'autopay:endow', 'endow', 'endow', 'query', 'can I pay this online? ICICI Pru: Premium of Rs 5,000 for your Assured Savings P')
+   ('can I pay this online?', 'payment_modes:ulip', 'autopay:ulip', 'ulip', 'ulip', 'query', 'can I pay this online? ICICI Pru: Premium of Rs 18,000 for your Wealth ULIP poli')
+   ('what if this gets rejected?', 'claim_rejection_appeal:all', 'death_claim_docs:pension', 'pension', 'pension', 'query', 'what if this gets rejected? Claim ref CL-25297 for your Retirement Pension Plan ')
+   ('should I move this to debt, how do I switch?', 'fund_switch:mf', 'partial_withdrawal:endow', None, 'mf', 'query', 'should I move this to debt, how do I switch? Action needed: KYC for your Assured')
+   ('which documents are needed for this?', 'kyc_update:all', 'death_claim_docs:term', 'term', 'pension', 'query', 'which documents are needed for this? Claim ref CL-30241 for your Term Protect Pl')
+   ('what if this gets rejected?', 'claim_rejection_appeal:all', 'death_claim_docs:ulip', 'ulip', 'ulip', 'query', 'what if this gets rejected? Claim ref CL-30069 for your Wealth ULIP policy endin')
+
+== switch_product 7
+   ('and for the equity fund one?', 'fund_value_nav:mf', 'misc:015', 'mf', 'mf', 'query', 'how much tax saving can I claim')
+   ('ok and the assured savings policy?', 'tax_benefit:endow', 'misc:011', 'endow', 'endow', 'query', 'what is the repo rate right now')
+   ('ok and the retirement plan?', 'maturity_claim:pension', 'care_hours:all', 'pension', 'pension', 'query', 'is chat support available at night')
+   ('same question for my endowment plan', 'maturity_claim:endow', 'care_hours:all', 'endow', 'endow', 'query', 'is chat support available at night')
+   ('what about my endowment plan?', 'partial_withdrawal:endow', 'misc:036', 'endow', 'endow', 'query', 'I have a equity fund. I need some funds, can I redeem part of it')
+   ('and for the assured savings policy one?', 'policy_loan:endow', 'partial_withdrawal:endow', 'endow', 'endow', 'query', 'going back to what I asked earlier about withdrawal: is a policy loan available')
+   ('same question for my pension plan', 'fund_switch:pension', 'payment_modes:pension', 'pension', 'pension', 'query', 'can I pay through UPI or net banking? (this is for myM F SIP)')
+
+== correction 2
+   ('sorry, I meant my guaranteed policy, not the pension plan', 'maturity_claim:endow', 'maturity_claim:pension', 'pension', 'endow', 'query', 'when and how do I receive the maturity benefit')
+   ("oops wrong one - I'm asking about the MF SIP", 'fund_switch:mf', 'payment_modes:mf', 'mf', 'mf', 'query', 'can I pay through UPI or net banking? (this is for myM F SIP)')

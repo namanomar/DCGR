@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DCGR Evaluation Report</title>
+<style>
+  :root {
+    --ink: #1a1f29; --sub: #566072; --bg: #ffffff; --panel: #f6f8fb; --line: #e4e8ef;
+    --acc: #1f6feb; --good: #2a9d8f; --warn: #d1495b; --orange: #d98324;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 48px 24px 96px; }
+  h1 { font-size: 2rem; margin: 0 0 4px; letter-spacing: -0.02em; }
+  .sub { color: var(--sub); font-size: 1.05rem; margin-bottom: 36px; }
+  h2 { font-size: 1.35rem; margin: 56px 0 14px; padding-top: 18px; border-top: 1px solid var(--line); letter-spacing: -0.01em; }
+  h2 .num { color: var(--acc); font-variant-numeric: tabular-nums; margin-right: 8px; }
+  h3 { font-size: 1.05rem; margin: 28px 0 10px; }
+  p { margin: 0 0 14px; }
+  .lede { font-size: 1.1rem; color: var(--ink); }
+  ul, ol { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  code { background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; font-size: 0.88em; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 18px 22px; margin: 18px 0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin: 18px 0; }
+  .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
+  .stat .v { font-size: 1.5rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .stat .l { color: var(--sub); font-size: 0.82rem; margin-top: 2px; }
+  .stat .d { color: var(--sub); font-size: 0.78rem; margin-top: 4px; }
+  figure { margin: 20px 0; }
+  figure img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+  figcaption { color: var(--sub); font-size: 0.86rem; margin-top: 8px; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.92rem; }
+  th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+  th { color: var(--sub); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.03em; }
+  tr.hl td { font-weight: 700; color: var(--acc); }
+  tr.bad td { color: var(--warn); }
+  tr.good td { color: var(--good); }
+  .pill { display: inline-block; padding: 2px 9px; border-radius: 99px; font-size: 0.76rem; font-weight: 600; }
+  .pill.good { background: #e6f5f3; color: var(--good); }
+  .pill.warn { background: #fbeaea; color: var(--warn); }
+  .pill.new { background: #eaf1fd; color: var(--acc); }
+  .note { border-left: 3px solid var(--orange); background: #fdf6ee; padding: 10px 16px; border-radius: 0 8px 8px 0; font-size: 0.92rem; margin: 16px 0; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 720px) { .two-col { grid-template-columns: 1fr; } .wrap { padding: 32px 16px 72px; } }
+  footer { margin-top: 64px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--sub); font-size: 0.85rem; }
+  a { color: var(--acc); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Dynamic Context-Gated Retrieval (DCGR)</h1>
+<p class="sub">Full evaluation report by Naman Omar — synthetic ICICI-Prudential-style insurance / mutual-fund chat assistant · test split, 160 users, 5,135 events</p>
+
+<p class="lede">DCGR is a six-layer pipeline (gate → task clustering → constraint memory → notification linking → query builder → hybrid search) designed for continuous, interrupted, multi-user chat, where a naive "embed the latest message" RAG baseline breaks down. This report evaluates the full system end-to-end: 7 embedding models, 4 search strategies, a 6-way query-construction ablation, a 12-way layer ablation, robustness to injected noise, 5 local LLMs as query resolvers, a task-clustering study, and bootstrap confidence intervals.</p>
+
+<div class="grid">
+  <div class="stat"><div class="v">0.783</div><div class="l">R@1 — DCGR (full)</div><div class="d">95% CI 0.752–0.815</div></div>
+  <div class="stat"><div class="v">0.605</div><div class="l">R@1 — naive baseline</div><div class="d">latest message only, no CI overlap</div></div>
+  <div class="stat"><div class="v">+29%</div><div class="l">relative R@1 gain</div><div class="d">DCGR vs. naive, same embedder</div></div>
+  <div class="stat"><div class="v">0.852</div><div class="l">best R@1 — Qwen3-Emb-4B</div><div class="d">dense retrieval, biggest embedder tried</div></div>
+  <div class="stat"><div class="v">48</div><div class="l">search calls / 100 events</div><div class="d">vs. 80 for an always-retrieve baseline</div></div>
+  <div class="stat"><div class="v">0.793</div><div class="l">best LLM-assisted R@1</div><div class="d">Phi-3.5-mini-instruct, selective resolver</div></div>
+</div>
+
+<h2><span class="num">1</span>Dataset</h2>
+<p>A synthetic, labelled chat log for a multi-product (term / ULIP / endowment / pension / mutual fund) insurance assistant: 160 users, 5,135 events, split by user (train / val / test, no leakage). Every record carries the ground-truth intent, task id, gold KB document(s), and whether retrieval should even fire — so gating, task assignment, and ranking can all be scored independently. The knowledge base has 181 documents: core answers, deliberately near-duplicate <em>superseded</em> versions (freshness test), and topic-overlapping distractors.</p>
+<figure>
+  <img src="../figures/fig_dataset.png" alt="Dataset composition: events by kind, events per user, split sizes">
+  <figcaption>Fig. 1 — Event-kind mix (implicit/explicit references, notification callbacks, product switches, corrections, plus social/off-topic/promo/OTP noise), events-per-user distribution, and the train/val/test split.</figcaption>
+</figure>
+
+<h2><span class="num">2</span>Architecture</h2>
+<p>Every incoming event (user message, SMS, email, app notification) passes through six layers, each independently switchable for ablation:</p>
+<figure>
+  <img src="../figures/fig_arch.png" alt="DCGR architecture diagram">
+  <figcaption>Fig. 2 — Gate → task clusters → constraint slots → query builder → hybrid search → optional rerank, with a small local LLM invoked only for ambiguous/referential turns, and social/off-topic/OTP/promo traffic quarantined before it can pollute memory.</figcaption>
+</figure>
+<ul>
+  <li><strong>L1 Gate</strong> — classifies every event (social / off-topic / query / statement / notification) and decides whether retrieval is worth running at all.</li>
+  <li><strong>L2 Task clusters</strong> — per-user online clustering by topic family + recency; ambiguous turns attach to the most recent task rather than starting a new one.</li>
+  <li><strong>L3 Constraint memory</strong> — a product slot stated once and reused implicitly, falling back to the customer's CRM profile.</li>
+  <li><strong>L4 Notification linking</strong> — transactional notifications (premium due, claim update…) are buffered as candidate task seeds and referents for deictic questions ("what happens if I miss <em>this</em>?"); promos/OTPs are quarantined.</li>
+  <li><strong>L5 Query builder</strong> — assembles a standalone query from task state, optionally handed to a small local LLM for hard cases.</li>
+  <li><strong>L6 Search</strong> — BM25 + dense (reciprocal-rank or weighted fusion), freshness and product-metadata filters, optional cross-encoder rerank.</li>
+</ul>
+
+<h2><span class="num">3</span>Headline result, with uncertainty</h2>
+<p>Bootstrapped over users (2,000 resamples, 95% CI) on the main embedder (Qwen3-Embedding-0.6B):</p>
+<table>
+  <tr><th>System</th><th>R@1</th><th>R@5</th><th>MRR@10</th><th>nDCG@10</th></tr>
+  <tr><td>naive — last-4 concat</td><td>0.253 (0.227–0.278)</td><td>0.660 (0.625–0.695)</td><td>0.419 (0.395–0.444)</td><td>0.503 (0.480–0.527)</td></tr>
+  <tr><td>naive — latest message only</td><td>0.605 (0.569–0.642)</td><td>0.862 (0.833–0.889)</td><td>0.711 (0.681–0.741)</td><td>0.764 (0.738–0.789)</td></tr>
+  <tr class="hl"><td>DCGR (full)</td><td>0.783 (0.752–0.815)</td><td>0.939 (0.919–0.957)</td><td>0.850 (0.824–0.874)</td><td>0.875 (0.851–0.897)</td></tr>
+</table>
+<p>The DCGR interval does not overlap either baseline's — the gain is not noise. Concatenating the last 4 raw messages (the most common naive chat-RAG pattern) is actually <em>worse</em> than just embedding the latest message alone, because unrelated interleaved turns (social chatter, promos, other tasks) dilute the query.</p>
+
+<h2><span class="num">4</span>Embedding model comparison</h2>
+<p>Swept 7 embedders × 4 search strategies on the full DCGR pipeline (structured query construction held fixed). Original 4-model sweep (TF-IDF, MiniLM-L6, BGE-small, Qwen3-Emb-0.6B) extended with 3 more: a next-size-up Qwen3 embedder, and two different-family mid-size models.</p>
+<figure>
+  <img src="../figures/fig_embed.png" alt="Heatmap of R@1 and nDCG@10 across 7 embedders and 4 search strategies">
+  <figcaption>Fig. 3 — R@1 and nDCG@10 for every (embedder, search strategy) pair.</figcaption>
+</figure>
+<table>
+  <tr><th>Embedder</th><th>Params</th><th>Best R@1</th><th>Best nDCG@10</th><th>Strategy</th></tr>
+  <tr><td>TF-IDF</td><td>— (sparse)</td><td>0.648</td><td>0.775</td><td>hybrid weighted</td></tr>
+  <tr><td>MiniLM-L6</td><td>22M</td><td>0.748</td><td>0.849</td><td>dense / hybrid weighted</td></tr>
+  <tr><td>BGE-small</td><td>33M</td><td>0.742</td><td>0.848</td><td>hybrid weighted</td></tr>
+  <tr><td>GTE-large <span class="pill new">new</span></td><td>335M</td><td>0.755</td><td>0.850</td><td>hybrid weighted</td></tr>
+  <tr><td>E5-large-v2 <span class="pill new">new</span></td><td>335M</td><td>0.797</td><td>0.872</td><td>dense</td></tr>
+  <tr><td>Qwen3-Emb-0.6B (main)</td><td>600M</td><td>0.817</td><td>0.892</td><td>dense</td></tr>
+  <tr class="hl"><td>Qwen3-Emb-4B <span class="pill new">new</span></td><td>4B</td><td>0.852</td><td>0.919</td><td>dense</td></tr>
+</table>
+<p>Two consistent findings across every embedder: <strong>pure dense beats every hybrid variant</strong> once the embedder is competent (BM25 only helps TF-IDF and the two weakest dense models), and <strong>scale inside the same family keeps paying off</strong> — Qwen3-Emb-4B (dense) is the best single number in the whole study at R@1=0.852, a further +3.5pt over the 0.6B version. Among similar-size alternatives, E5-large-v2 clearly outperforms GTE-large (0.797 vs 0.743 R@1 on dense) despite matched parameter counts — instruction/retrieval-specific pretraining matters more than raw size in the 300–600M range.</p>
+
+<h2><span class="num">5</span>Search strategy</h2>
+<figure>
+  <img src="../figures/fig_search.png" alt="Bar charts of R@1 and nDCG@10 by search strategy">
+  <figcaption>Fig. 4 — BM25 / dense / hybrid (± cross-encoder rerank), on the DCGR context vs. a naive "latest message" context.</figcaption>
+</figure>
+<p>Cross-encoder reranking (top-20) <em>hurts</em> every strategy here (dense: 0.817 → 0.758 R@1) — the reranker was trained on open-domain passage ranking, not this product's short, template-heavy KB answers, so it's actively miscalibrated for this domain. This is a case where more compute (an extra model pass) makes results worse, and it's only visible because the ablation included it rather than assuming rerankers always help.</p>
+
+<h2><span class="num">6</span>How the query is built</h2>
+<figure>
+  <img src="../figures/fig_context.png" alt="R@1 and call volume across 6 query-construction strategies">
+  <figcaption>Fig. 5 — Six ways to turn conversation history into a search query, same embedder and search strategy throughout.</figcaption>
+</figure>
+<table>
+  <tr><th>Query strategy</th><th>R@1</th><th>Search calls/100 events</th></tr>
+  <tr class="bad"><td>last-12 user history (naive)</td><td>0.143</td><td>80.4</td></tr>
+  <tr class="bad"><td>last-4 events concat (naive)</td><td>0.253</td><td>80.4</td></tr>
+  <tr><td>last-4 concat + gate only</td><td>0.253</td><td>47.9</td></tr>
+  <tr><td>latest message only (naive)</td><td>0.605</td><td>80.4</td></tr>
+  <tr class="hl"><td>structured task state (DCGR)</td><td>0.783</td><td>47.9</td></tr>
+  <tr class="good"><td>oracle (gold product + referent)</td><td>0.853</td><td>45.3</td></tr>
+</table>
+<p>This is the single clearest result in the study: concatenating more raw context makes retrieval <em>worse</em>, not better, because it drowns the actual question in unrelated turns — that's the core premise DCGR is built to fix. DCGR closes 72% of the gap between the "latest message" baseline and a perfect oracle that knows the true product and referent, using only predicted structure (no gold labels).</p>
+
+<h2><span class="num">7</span>Layer-by-layer ablation</h2>
+<figure>
+  <img src="../figures/fig_ablation.png" alt="R@1 and call volume with each DCGR layer removed one at a time">
+  <figcaption>Fig. 6 — Each layer removed independently from the full pipeline, plus the all-layers-removed naive baseline for scale.</figcaption>
+</figure>
+<p>Ranked by damage when removed: <strong>constraint memory</strong> (0.783 → 0.645, −13.8pt) and <strong>hybrid→BM25-only</strong> (−11.6pt) hurt most, followed by task clustering (−4.3pt), freshness filtering (−6.1pt), and notification linking (−3.0pt). The gate barely costs accuracy to remove (−0.5pt) but <em>does</em> save 40% of search calls (47.9 vs 80.4 per 100 events) — its job is efficiency, not quality. Oddly, <strong>dense-only slightly beats the full hybrid</strong> (0.817 vs 0.783) at this embedder — hybrid fusion is a safety net for weaker embedders (§4), not a universal improvement once the embedder is strong.</p>
+
+<h2><span class="num">8</span>Robustness to interruptions</h2>
+<figure>
+  <img src="../figures/fig_noise.png" alt="R@1 and search-call volume as injected noise events increase">
+  <figcaption>Fig. 7 — Injecting 0–3 extra noise events (small talk, off-topic, promos, OTPs, unrelated notifications) per original event.</figcaption>
+</figure>
+<p>DCGR (full) stays essentially flat (0.783 → 0.767 R@1) from zero to 3× noise injection, while the naive last-4-concat baseline — already the weakest system — degrades further (0.253 → 0.212) because more noise means more junk in its fixed context window. Removing the gate under noise is the one layer whose cost compounds: without it, search-call volume grows linearly with injected noise (1,424 → 3,648 calls) since every noise event triggers a search; the gate keeps DCGR's call volume nearly flat (848 → 1,051) by filtering social/off-topic/promo/OTP traffic before it ever reaches the query builder.</p>
+
+<h2><span class="num">9</span>Task recovery (clustering)</h2>
+<figure>
+  <img src="../figures/fig_cluster.png" alt="Adjusted Rand Index for task recovery, generic clustering vs. DCGR">
+  <figcaption>Fig. 8 — Held-out-user test ARI: generic embedding-similarity clustering vs. DCGR's family-aware assignment.</figcaption>
+</figure>
+<p>Four generic clustering strategies were grid-searched over their key hyperparameter (online cosine threshold, online+recency, agglomerative distance threshold, HDBSCAN) on validation users, then scored on held-out test users — every one tops out around <strong>ARI≈0.25–0.27</strong>, regardless of method. DCGR's family-aware task assignment (which uses the predicted topic family, not just raw text similarity) reaches <strong>ARI=0.798</strong>, a 3× improvement. Removing the gate (noise enters clusters) or notification linking drops this to 0.738 and 0.725 respectively — both still far above any generic-clustering ceiling. The takeaway: conversational task boundaries in this domain are not recoverable from embedding similarity alone; they need the structured signal DCGR computes.</p>
+
+<h2><span class="num">10</span>Where structure helps most</h2>
+<figure>
+  <img src="../figures/fig_kind.png" alt="R@1 by question type, naive RAG vs DCGR">
+  <figcaption>Fig. 9 — R@1 by question type: implicit/explicit references, notification callbacks, product switches, corrections.</figcaption>
+</figure>
+<p>The gap between naive RAG and DCGR is largest exactly where a human would expect context to matter: resolving "what about <em>this</em>" against a buffered notification, or "and for my <em>other</em> policy" after a product switch — cases a single-message embedding has no way to resolve correctly.</p>
+
+<h3>Qualitative error patterns (DCGR, full config)</h3>
+<p>Per-kind breakdown on the full pipeline: implicit R@1=0.824 (n=603), explicit R@1=0.748 (n=123), notification-referent R@1=0.491 (n=55), product-switch R@1=0.611 (n=18), correction R@1=0.50 (n=4, too few to read much into). The two biggest failure modes:</p>
+<ul>
+  <li><strong>Aspect confusion within the right product</strong> — the predicted product/family is usually correct, but the system lands on a lexically-similar sibling aspect (e.g. <code>tax_benefit</code> vs <code>tax_on_maturity</code>, <code>payment_modes</code> vs <code>autopay</code>). This is a ranking precision problem within an already-narrowed candidate set, not a context-resolution failure.</li>
+  <li><strong>Notification-referent is the weakest kind by far</strong> (R@1=0.491) — deictic questions like "can I pay <em>this</em> online?" sometimes resolve to the wrong buffered notification when two of the same family are pending, or the family classifier itself misreads the referent's topic.</li>
+</ul>
+
+<h2><span class="num">11</span>Local LLMs as query resolvers</h2>
+<p>Three configurations tested per model: (a) LLM rewrites the last 6 events into a standalone query for <em>every</em> turn (no gate — the naive "just add an LLM" pattern), (b) the same behind a gate, (c) DCGR's own design — the LLM is invoked <em>only</em> for the small fraction of turns its own classifiers flag as ambiguous (elliptic/deictic or low-confidence family). Five models: the original Qwen3-0.6B/1.7B, plus three added for this run — Qwen3-4B (same family, bigger), Qwen2.5-3B-Instruct and Phi-3.5-mini-instruct (different families/instruction tuning). All five run locally in 4-bit (NF4) quantization.</p>
+<figure>
+  <img src="../figures/fig_llm.png" alt="R@1 and LLM call volume across 5 local LLMs and 3 usage strategies">
+  <figcaption>Fig. 10 — R@1 and LLM calls issued, 5 models × 3 strategies.</figcaption>
+</figure>
+<table>
+  <tr><th>Model</th><th>Full rewrite R@1</th><th>Selective resolver R@1</th><th>Selective resolver calls</th></tr>
+  <tr><td>Qwen3-0.6B</td><td>0.558</td><td>0.770</td><td>168</td></tr>
+  <tr><td>Qwen3-1.7B</td><td>0.552</td><td>0.761</td><td>169</td></tr>
+  <tr><td>Qwen3-4B <span class="pill new">new</span></td><td>0.598</td><td>0.777</td><td>169</td></tr>
+  <tr><td>Qwen2.5-3B-Instruct <span class="pill new">new</span></td><td>0.565</td><td>0.783</td><td>169</td></tr>
+  <tr class="hl"><td>Phi-3.5-mini-instruct <span class="pill new">new</span></td><td>0.542</td><td><strong>0.793</strong></td><td>169</td></tr>
+</table>
+<p>Three findings:</p>
+<ul>
+  <li><strong>Where the LLM is used matters far more than which LLM.</strong> Every model's "full rewrite" mode plateaus at R@1≈0.54–0.60 — well below even the naive "latest message" baseline (0.605) from §3, and nowhere near DCGR's 0.783. Full-rewrite is rewriting <em>every</em> turn including ones that were already fine standalone, introducing noise. The selective-resolver pattern — reserve the LLM for the ~12% of turns flagged ambiguous — lifts every model to 0.76–0.79, close to or exceeding the all-structured DCGR baseline, using roughly 8× fewer LLM calls than full rewrite (169 vs ~1,400).</li>
+  <li><strong>Model scale alone doesn't help within the selective pattern.</strong> Qwen3-4B (0.777) barely beats Qwen3-1.7B (0.761) and does not beat the much smaller Qwen2.5-3B (0.783) or Phi-3.5-mini (0.793) — different model families/instruction tuning recipes matter more than raw parameter count at this task once the LLM's role is this narrow.</li>
+  <li><strong>Phi-3.5-mini-instruct is the best LLM-assisted result in the whole study</strong> (R@1=0.793, nDCG=0.878) — edging out even the pure-structured DCGR baseline (0.783) at the embedder used here, for the cost of ~169 extra short generations per ~1,770 test events.</li>
+</ul>
+
+<h2><span class="num">12</span>Engineering notes (reproducibility)</h2>
+<p>For anyone re-running this: two real bugs were found and fixed while extending this sweep (not pre-existing results, which were already correct) —</p>
+<ul>
+  <li>Cached embedding vectors (<code>data/emb_cache/*.pkl</code>) from a prior machine were pickled under numpy≥2.0's internal module layout and failed to unpickle against numpy 1.26.4 here (<code>ModuleNotFoundError: numpy._core.numeric</code>). Fixed by clearing the stale caches and recomputing locally — harmless since they're pure caches, not source data.</li>
+  <li>The notification buffer built during the conversation loop (<code>pipeline.py</code>) never stored the notification's own text, but the LLM selective-resolver's prompt builder tried to read it (<code>resolver_prompt</code>). This only fires when a local LLM is enabled <em>and</em> a referential turn needs to quote a buffered notification — a real latent bug that the original 2-model run likely never fully exercised. Fixed by storing the text at buffer time.</li>
+</ul>
+<p>This machine's GPU is a shared MIG slice (20GB) whose free memory fluctuated between ~1GB and ~17GB used by other tenants during this run, outside our control. All five LLMs were loaded in 4-bit (NF4, via <code>bitsandbytes</code>) to keep footprint small, and every GPU model-load call was wrapped in a retry-with-backoff helper (<code>common.load_with_retry</code>) to survive transient allocation failures under contention rather than crashing the sweep.</p>
+
+<footer>
+  Synthetic data and labels only — not official ICICI Prudential policy terms. Generated from <code>results/*.json</code> and <code>figures/*.png</code> in this repository; see <code>scripts/run_experiments.py</code> and <code>src/pipeline.py</code> for the full implementation.
+</footer>
+
+</div>
+</body>
+</html>

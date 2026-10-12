@@ -1,0 +1,2572 @@
+[
+ {
+  "user_id": "U0000",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "7468",
+    "premium": 5000
+   }
+  ],
+  "name": "customer_0000",
+  "split": "test"
+ },
+ {
+  "user_id": "U0001",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "2542",
+    "premium": 24000
+   }
+  ],
+  "name": "customer_0001",
+  "split": "test"
+ },
+ {
+  "user_id": "U0002",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "1614",
+    "premium": 12000
+   },
+   {
+    "product": "ulip",
+    "last4": "8104",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0002",
+  "split": "train"
+ },
+ {
+  "user_id": "U0003",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "7955",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0003",
+  "split": "train"
+ },
+ {
+  "user_id": "U0004",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "2013",
+    "premium": 60000
+   },
+   {
+    "product": "ulip",
+    "last4": "7499",
+    "premium": 12000
+   },
+   {
+    "product": "endow",
+    "last4": "4622",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0004",
+  "split": "val"
+ },
+ {
+  "user_id": "U0005",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "7867",
+    "premium": 18000
+   },
+   {
+    "product": "endow",
+    "last4": "9858",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0005",
+  "split": "val"
+ },
+ {
+  "user_id": "U0006",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "2688",
+    "premium": 60000
+   },
+   {
+    "product": "ulip",
+    "last4": "4078",
+    "premium": 24000
+   }
+  ],
+  "name": "customer_0006",
+  "split": "test"
+ },
+ {
+  "user_id": "U0007",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "1976",
+    "premium": 60000
+   }
+  ],
+  "name": "customer_0007",
+  "split": "train"
+ },
+ {
+  "user_id": "U0008",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "8005",
+    "premium": 24000
+   }
+  ],
+  "name": "customer_0008",
+  "split": "train"
+ },
+ {
+  "user_id": "U0009",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "5911",
+    "premium": 18000
+   },
+   {
+    "product": "endow",
+    "last4": "3945",
+    "premium": 5000
+   }
+  ],
+  "name": "customer_0009",
+  "split": "test"
+ },
+ {
+  "user_id": "U0010",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "9604",
+    "premium": 36000
+   },
+   {
+    "product": "endow",
+    "last4": "6627",
+    "premium": 5000
+   }
+  ],
+  "name": "customer_0010",
+  "split": "test"
+ },
+ {
+  "user_id": "U0011",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "2934",
+    "premium": 60000
+   },
+   {
+    "product": "term",
+    "last4": "7850",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0011",
+  "split": "train"
+ },
+ {
+  "user_id": "U0012",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "7909",
+    "premium": 12000
+   },
+   {
+    "product": "pension",
+    "last4": "2271",
+    "premium": 60000
+   }
+  ],
+  "name": "customer_0012",
+  "split": "train"
+ },
+ {
+  "user_id": "U0013",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "6737",
+    "premium": 60000
+   },
+   {
+    "product": "mf",
+    "last4": "9137",
+    "premium": 60000
+   }
+  ],
+  "name": "customer_0013",
+  "split": "test"
+ },
+ {
+  "user_id": "U0014",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "5422",
+    "premium": 36000
+   },
+   {
+    "product": "mf",
+    "last4": "2064",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0014",
+  "split": "train"
+ },
+ {
+  "user_id": "U0015",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "5662",
+    "premium": 5000
+   },
+   {
+    "product": "pension",
+    "last4": "7320",
+    "premium": 5000
+   }
+  ],
+  "name": "customer_0015",
+  "split": "train"
+ },
+ {
+  "user_id": "U0016",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "6823",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0016",
+  "split": "test"
+ },
+ {
+  "user_id": "U0017",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "4575",
+    "premium": 24000
+   },
+   {
+    "product": "term",
+    "last4": "3119",
+    "premium": 5000
+   }
+  ],
+  "name": "customer_0017",
+  "split": "train"
+ },
+ {
+  "user_id": "U0018",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "9134",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0018",
+  "split": "val"
+ },
+ {
+  "user_id": "U0019",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "5552",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0019",
+  "split": "train"
+ },
+ {
+  "user_id": "U0020",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "7804",
+    "premium": 24000
+   },
+   {
+    "product": "endow",
+    "last4": "7233",
+    "premium": 18000
+   },
+   {
+    "product": "pension",
+    "last4": "3472",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0020",
+  "split": "train"
+ },
+ {
+  "user_id": "U0021",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "4822",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0021",
+  "split": "train"
+ },
+ {
+  "user_id": "U0022",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "5304",
+    "premium": 24000
+   },
+   {
+    "product": "ulip",
+    "last4": "1067",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0022",
+  "split": "test"
+ },
+ {
+  "user_id": "U0023",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "3056",
+    "premium": 5000
+   },
+   {
+    "product": "mf",
+    "last4": "9445",
+    "premium": 60000
+   }
+  ],
+  "name": "customer_0023",
+  "split": "val"
+ },
+ {
+  "user_id": "U0024",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "7428",
+    "premium": 36000
+   },
+   {
+    "product": "pension",
+    "last4": "7536",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0024",
+  "split": "test"
+ },
+ {
+  "user_id": "U0025",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "2019",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0025",
+  "split": "test"
+ },
+ {
+  "user_id": "U0026",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "8219",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0026",
+  "split": "test"
+ },
+ {
+  "user_id": "U0027",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "1861",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0027",
+  "split": "val"
+ },
+ {
+  "user_id": "U0028",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "9791",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0028",
+  "split": "train"
+ },
+ {
+  "user_id": "U0029",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "4407",
+    "premium": 60000
+   },
+   {
+    "product": "term",
+    "last4": "7164",
+    "premium": 18000
+   },
+   {
+    "product": "pension",
+    "last4": "5132",
+    "premium": 24000
+   }
+  ],
+  "name": "customer_0029",
+  "split": "train"
+ },
+ {
+  "user_id": "U0030",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "2889",
+    "premium": 36000
+   },
+   {
+    "product": "term",
+    "last4": "8634",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0030",
+  "split": "test"
+ },
+ {
+  "user_id": "U0031",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "2674",
+    "premium": 5000
+   },
+   {
+    "product": "ulip",
+    "last4": "6613",
+    "premium": 5000
+   }
+  ],
+  "name": "customer_0031",
+  "split": "train"
+ },
+ {
+  "user_id": "U0032",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "9459",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0032",
+  "split": "val"
+ },
+ {
+  "user_id": "U0033",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "6926",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0033",
+  "split": "test"
+ },
+ {
+  "user_id": "U0034",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "2491",
+    "premium": 5000
+   },
+   {
+    "product": "endow",
+    "last4": "5278",
+    "premium": 60000
+   }
+  ],
+  "name": "customer_0034",
+  "split": "train"
+ },
+ {
+  "user_id": "U0035",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "4650",
+    "premium": 60000
+   },
+   {
+    "product": "endow",
+    "last4": "9873",
+    "premium": 60000
+   }
+  ],
+  "name": "customer_0035",
+  "split": "train"
+ },
+ {
+  "user_id": "U0036",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "4197",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0036",
+  "split": "train"
+ },
+ {
+  "user_id": "U0037",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "9073",
+    "premium": 24000
+   },
+   {
+    "product": "mf",
+    "last4": "1474",
+    "premium": 12000
+   },
+   {
+    "product": "endow",
+    "last4": "5577",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0037",
+  "split": "train"
+ },
+ {
+  "user_id": "U0038",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "6640",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0038",
+  "split": "train"
+ },
+ {
+  "user_id": "U0039",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "4612",
+    "premium": 12000
+   },
+   {
+    "product": "mf",
+    "last4": "4716",
+    "premium": 36000
+   },
+   {
+    "product": "term",
+    "last4": "4222",
+    "premium": 24000
+   }
+  ],
+  "name": "customer_0039",
+  "split": "test"
+ },
+ {
+  "user_id": "U0040",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "1031",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0040",
+  "split": "train"
+ },
+ {
+  "user_id": "U0041",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "2964",
+    "premium": 36000
+   },
+   {
+    "product": "term",
+    "last4": "4265",
+    "premium": 36000
+   },
+   {
+    "product": "mf",
+    "last4": "3924",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0041",
+  "split": "val"
+ },
+ {
+  "user_id": "U0042",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "7485",
+    "premium": 36000
+   },
+   {
+    "product": "term",
+    "last4": "7576",
+    "premium": 5000
+   }
+  ],
+  "name": "customer_0042",
+  "split": "train"
+ },
+ {
+  "user_id": "U0043",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "1451",
+    "premium": 18000
+   },
+   {
+    "product": "mf",
+    "last4": "8624",
+    "premium": 5000
+   },
+   {
+    "product": "term",
+    "last4": "3394",
+    "premium": 60000
+   }
+  ],
+  "name": "customer_0043",
+  "split": "val"
+ },
+ {
+  "user_id": "U0044",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "9989",
+    "premium": 60000
+   },
+   {
+    "product": "endow",
+    "last4": "3146",
+    "premium": 12000
+   },
+   {
+    "product": "term",
+    "last4": "1233",
+    "premium": 5000
+   }
+  ],
+  "name": "customer_0044",
+  "split": "val"
+ },
+ {
+  "user_id": "U0045",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "8107",
+    "premium": 18000
+   },
+   {
+    "product": "ulip",
+    "last4": "4457",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0045",
+  "split": "train"
+ },
+ {
+  "user_id": "U0046",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "9211",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0046",
+  "split": "train"
+ },
+ {
+  "user_id": "U0047",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "9918",
+    "premium": 36000
+   },
+   {
+    "product": "mf",
+    "last4": "3147",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0047",
+  "split": "test"
+ },
+ {
+  "user_id": "U0048",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "9466",
+    "premium": 36000
+   },
+   {
+    "product": "pension",
+    "last4": "9219",
+    "premium": 18000
+   },
+   {
+    "product": "mf",
+    "last4": "9713",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0048",
+  "split": "test"
+ },
+ {
+  "user_id": "U0049",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "4000",
+    "premium": 60000
+   },
+   {
+    "product": "pension",
+    "last4": "1064",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0049",
+  "split": "train"
+ },
+ {
+  "user_id": "U0050",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "2971",
+    "premium": 60000
+   }
+  ],
+  "name": "customer_0050",
+  "split": "test"
+ },
+ {
+  "user_id": "U0051",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "9695",
+    "premium": 60000
+   }
+  ],
+  "name": "customer_0051",
+  "split": "train"
+ },
+ {
+  "user_id": "U0052",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "5071",
+    "premium": 18000
+   },
+   {
+    "product": "mf",
+    "last4": "5537",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0052",
+  "split": "val"
+ },
+ {
+  "user_id": "U0053",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "1456",
+    "premium": 12000
+   },
+   {
+    "product": "pension",
+    "last4": "8262",
+    "premium": 24000
+   }
+  ],
+  "name": "customer_0053",
+  "split": "train"
+ },
+ {
+  "user_id": "U0054",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "5541",
+    "premium": 36000
+   },
+   {
+    "product": "ulip",
+    "last4": "9325",
+    "premium": 60000
+   }
+  ],
+  "name": "customer_0054",
+  "split": "train"
+ },
+ {
+  "user_id": "U0055",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "9572",
+    "premium": 24000
+   },
+   {
+    "product": "ulip",
+    "last4": "4319",
+    "premium": 36000
+   },
+   {
+    "product": "endow",
+    "last4": "3246",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0055",
+  "split": "train"
+ },
+ {
+  "user_id": "U0056",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "6177",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0056",
+  "split": "train"
+ },
+ {
+  "user_id": "U0057",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "4484",
+    "premium": 5000
+   },
+   {
+    "product": "term",
+    "last4": "5960",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0057",
+  "split": "test"
+ },
+ {
+  "user_id": "U0058",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "5146",
+    "premium": 18000
+   },
+   {
+    "product": "endow",
+    "last4": "8663",
+    "premium": 18000
+   },
+   {
+    "product": "term",
+    "last4": "2542",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0058",
+  "split": "train"
+ },
+ {
+  "user_id": "U0059",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "8070",
+    "premium": 60000
+   },
+   {
+    "product": "mf",
+    "last4": "7616",
+    "premium": 24000
+   },
+   {
+    "product": "term",
+    "last4": "7902",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0059",
+  "split": "test"
+ },
+ {
+  "user_id": "U0060",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "1319",
+    "premium": 24000
+   },
+   {
+    "product": "endow",
+    "last4": "8514",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0060",
+  "split": "test"
+ },
+ {
+  "user_id": "U0061",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "9477",
+    "premium": 60000
+   },
+   {
+    "product": "endow",
+    "last4": "5840",
+    "premium": 60000
+   }
+  ],
+  "name": "customer_0061",
+  "split": "train"
+ },
+ {
+  "user_id": "U0062",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "2377",
+    "premium": 24000
+   },
+   {
+    "product": "ulip",
+    "last4": "5455",
+    "premium": 12000
+   },
+   {
+    "product": "mf",
+    "last4": "3974",
+    "premium": 24000
+   }
+  ],
+  "name": "customer_0062",
+  "split": "test"
+ },
+ {
+  "user_id": "U0063",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "7651",
+    "premium": 18000
+   },
+   {
+    "product": "endow",
+    "last4": "9791",
+    "premium": 60000
+   }
+  ],
+  "name": "customer_0063",
+  "split": "test"
+ },
+ {
+  "user_id": "U0064",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "5572",
+    "premium": 12000
+   },
+   {
+    "product": "term",
+    "last4": "4003",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0064",
+  "split": "test"
+ },
+ {
+  "user_id": "U0065",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "2451",
+    "premium": 24000
+   },
+   {
+    "product": "term",
+    "last4": "2372",
+    "premium": 60000
+   },
+   {
+    "product": "mf",
+    "last4": "4643",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0065",
+  "split": "test"
+ },
+ {
+  "user_id": "U0066",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "8434",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0066",
+  "split": "test"
+ },
+ {
+  "user_id": "U0067",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "7844",
+    "premium": 24000
+   }
+  ],
+  "name": "customer_0067",
+  "split": "train"
+ },
+ {
+  "user_id": "U0068",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "2793",
+    "premium": 18000
+   },
+   {
+    "product": "ulip",
+    "last4": "5290",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0068",
+  "split": "train"
+ },
+ {
+  "user_id": "U0069",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "5997",
+    "premium": 60000
+   }
+  ],
+  "name": "customer_0069",
+  "split": "train"
+ },
+ {
+  "user_id": "U0070",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "9193",
+    "premium": 5000
+   },
+   {
+    "product": "pension",
+    "last4": "3914",
+    "premium": 24000
+   }
+  ],
+  "name": "customer_0070",
+  "split": "train"
+ },
+ {
+  "user_id": "U0071",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "5103",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0071",
+  "split": "train"
+ },
+ {
+  "user_id": "U0072",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "4104",
+    "premium": 60000
+   }
+  ],
+  "name": "customer_0072",
+  "split": "test"
+ },
+ {
+  "user_id": "U0073",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "8080",
+    "premium": 5000
+   },
+   {
+    "product": "term",
+    "last4": "9110",
+    "premium": 60000
+   }
+  ],
+  "name": "customer_0073",
+  "split": "train"
+ },
+ {
+  "user_id": "U0074",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "4525",
+    "premium": 18000
+   },
+   {
+    "product": "endow",
+    "last4": "6614",
+    "premium": 18000
+   },
+   {
+    "product": "mf",
+    "last4": "3289",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0074",
+  "split": "test"
+ },
+ {
+  "user_id": "U0075",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "2158",
+    "premium": 5000
+   },
+   {
+    "product": "ulip",
+    "last4": "5187",
+    "premium": 36000
+   },
+   {
+    "product": "mf",
+    "last4": "3674",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0075",
+  "split": "test"
+ },
+ {
+  "user_id": "U0076",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "9289",
+    "premium": 5000
+   }
+  ],
+  "name": "customer_0076",
+  "split": "test"
+ },
+ {
+  "user_id": "U0077",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "5801",
+    "premium": 12000
+   },
+   {
+    "product": "ulip",
+    "last4": "8527",
+    "premium": 18000
+   },
+   {
+    "product": "endow",
+    "last4": "3581",
+    "premium": 24000
+   }
+  ],
+  "name": "customer_0077",
+  "split": "test"
+ },
+ {
+  "user_id": "U0078",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "6389",
+    "premium": 60000
+   },
+   {
+    "product": "mf",
+    "last4": "6300",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0078",
+  "split": "train"
+ },
+ {
+  "user_id": "U0079",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "4569",
+    "premium": 24000
+   }
+  ],
+  "name": "customer_0079",
+  "split": "val"
+ },
+ {
+  "user_id": "U0080",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "7252",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0080",
+  "split": "train"
+ },
+ {
+  "user_id": "U0081",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "5066",
+    "premium": 60000
+   },
+   {
+    "product": "ulip",
+    "last4": "1081",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0081",
+  "split": "test"
+ },
+ {
+  "user_id": "U0082",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "3357",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0082",
+  "split": "train"
+ },
+ {
+  "user_id": "U0083",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "5909",
+    "premium": 24000
+   },
+   {
+    "product": "term",
+    "last4": "4814",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0083",
+  "split": "test"
+ },
+ {
+  "user_id": "U0084",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "7381",
+    "premium": 24000
+   },
+   {
+    "product": "ulip",
+    "last4": "9096",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0084",
+  "split": "train"
+ },
+ {
+  "user_id": "U0085",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "3371",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0085",
+  "split": "test"
+ },
+ {
+  "user_id": "U0086",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "9282",
+    "premium": 18000
+   },
+   {
+    "product": "pension",
+    "last4": "9581",
+    "premium": 60000
+   },
+   {
+    "product": "endow",
+    "last4": "1263",
+    "premium": 5000
+   }
+  ],
+  "name": "customer_0086",
+  "split": "val"
+ },
+ {
+  "user_id": "U0087",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "1510",
+    "premium": 12000
+   },
+   {
+    "product": "term",
+    "last4": "3180",
+    "premium": 5000
+   }
+  ],
+  "name": "customer_0087",
+  "split": "train"
+ },
+ {
+  "user_id": "U0088",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "8395",
+    "premium": 60000
+   },
+   {
+    "product": "pension",
+    "last4": "1831",
+    "premium": 5000
+   }
+  ],
+  "name": "customer_0088",
+  "split": "train"
+ },
+ {
+  "user_id": "U0089",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "5006",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0089",
+  "split": "train"
+ },
+ {
+  "user_id": "U0090",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "2148",
+    "premium": 5000
+   }
+  ],
+  "name": "customer_0090",
+  "split": "test"
+ },
+ {
+  "user_id": "U0091",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "9617",
+    "premium": 12000
+   },
+   {
+    "product": "term",
+    "last4": "8763",
+    "premium": 24000
+   },
+   {
+    "product": "endow",
+    "last4": "2219",
+    "premium": 24000
+   }
+  ],
+  "name": "customer_0091",
+  "split": "train"
+ },
+ {
+  "user_id": "U0092",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "4780",
+    "premium": 5000
+   }
+  ],
+  "name": "customer_0092",
+  "split": "train"
+ },
+ {
+  "user_id": "U0093",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "7267",
+    "premium": 12000
+   },
+   {
+    "product": "mf",
+    "last4": "8848",
+    "premium": 5000
+   }
+  ],
+  "name": "customer_0093",
+  "split": "train"
+ },
+ {
+  "user_id": "U0094",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "4248",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0094",
+  "split": "train"
+ },
+ {
+  "user_id": "U0095",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "5987",
+    "premium": 60000
+   },
+   {
+    "product": "mf",
+    "last4": "3186",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0095",
+  "split": "test"
+ },
+ {
+  "user_id": "U0096",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "2630",
+    "premium": 5000
+   },
+   {
+    "product": "endow",
+    "last4": "4566",
+    "premium": 5000
+   }
+  ],
+  "name": "customer_0096",
+  "split": "train"
+ },
+ {
+  "user_id": "U0097",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "8613",
+    "premium": 36000
+   },
+   {
+    "product": "endow",
+    "last4": "8640",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0097",
+  "split": "train"
+ },
+ {
+  "user_id": "U0098",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "2406",
+    "premium": 36000
+   },
+   {
+    "product": "ulip",
+    "last4": "1286",
+    "premium": 24000
+   },
+   {
+    "product": "pension",
+    "last4": "8519",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0098",
+  "split": "train"
+ },
+ {
+  "user_id": "U0099",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "4437",
+    "premium": 18000
+   },
+   {
+    "product": "endow",
+    "last4": "2222",
+    "premium": 60000
+   },
+   {
+    "product": "ulip",
+    "last4": "2479",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0099",
+  "split": "test"
+ },
+ {
+  "user_id": "U0100",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "3172",
+    "premium": 60000
+   },
+   {
+    "product": "mf",
+    "last4": "9335",
+    "premium": 24000
+   }
+  ],
+  "name": "customer_0100",
+  "split": "val"
+ },
+ {
+  "user_id": "U0101",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "8964",
+    "premium": 36000
+   },
+   {
+    "product": "ulip",
+    "last4": "1406",
+    "premium": 18000
+   },
+   {
+    "product": "pension",
+    "last4": "1058",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0101",
+  "split": "test"
+ },
+ {
+  "user_id": "U0102",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "3305",
+    "premium": 36000
+   },
+   {
+    "product": "endow",
+    "last4": "6635",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0102",
+  "split": "train"
+ },
+ {
+  "user_id": "U0103",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "1028",
+    "premium": 24000
+   }
+  ],
+  "name": "customer_0103",
+  "split": "val"
+ },
+ {
+  "user_id": "U0104",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "4207",
+    "premium": 5000
+   },
+   {
+    "product": "term",
+    "last4": "1192",
+    "premium": 5000
+   }
+  ],
+  "name": "customer_0104",
+  "split": "val"
+ },
+ {
+  "user_id": "U0105",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "2064",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0105",
+  "split": "test"
+ },
+ {
+  "user_id": "U0106",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "6909",
+    "premium": 36000
+   },
+   {
+    "product": "term",
+    "last4": "5508",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0106",
+  "split": "train"
+ },
+ {
+  "user_id": "U0107",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "5679",
+    "premium": 5000
+   }
+  ],
+  "name": "customer_0107",
+  "split": "train"
+ },
+ {
+  "user_id": "U0108",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "9371",
+    "premium": 24000
+   },
+   {
+    "product": "endow",
+    "last4": "4110",
+    "premium": 24000
+   },
+   {
+    "product": "mf",
+    "last4": "8008",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0108",
+  "split": "train"
+ },
+ {
+  "user_id": "U0109",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "2320",
+    "premium": 12000
+   },
+   {
+    "product": "ulip",
+    "last4": "7731",
+    "premium": 36000
+   },
+   {
+    "product": "endow",
+    "last4": "3270",
+    "premium": 5000
+   }
+  ],
+  "name": "customer_0109",
+  "split": "train"
+ },
+ {
+  "user_id": "U0110",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "3085",
+    "premium": 18000
+   },
+   {
+    "product": "term",
+    "last4": "8736",
+    "premium": 36000
+   },
+   {
+    "product": "endow",
+    "last4": "6630",
+    "premium": 24000
+   }
+  ],
+  "name": "customer_0110",
+  "split": "test"
+ },
+ {
+  "user_id": "U0111",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "7655",
+    "premium": 5000
+   }
+  ],
+  "name": "customer_0111",
+  "split": "test"
+ },
+ {
+  "user_id": "U0112",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "7461",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0112",
+  "split": "test"
+ },
+ {
+  "user_id": "U0113",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "2231",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0113",
+  "split": "train"
+ },
+ {
+  "user_id": "U0114",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "8421",
+    "premium": 24000
+   },
+   {
+    "product": "ulip",
+    "last4": "8372",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0114",
+  "split": "test"
+ },
+ {
+  "user_id": "U0115",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "4999",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0115",
+  "split": "train"
+ },
+ {
+  "user_id": "U0116",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "2492",
+    "premium": 24000
+   }
+  ],
+  "name": "customer_0116",
+  "split": "val"
+ },
+ {
+  "user_id": "U0117",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "4311",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0117",
+  "split": "train"
+ },
+ {
+  "user_id": "U0118",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "7781",
+    "premium": 5000
+   },
+   {
+    "product": "mf",
+    "last4": "9587",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0118",
+  "split": "test"
+ },
+ {
+  "user_id": "U0119",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "9161",
+    "premium": 24000
+   },
+   {
+    "product": "term",
+    "last4": "6900",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0119",
+  "split": "test"
+ },
+ {
+  "user_id": "U0120",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "2517",
+    "premium": 24000
+   },
+   {
+    "product": "ulip",
+    "last4": "5070",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0120",
+  "split": "val"
+ },
+ {
+  "user_id": "U0121",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "6112",
+    "premium": 12000
+   },
+   {
+    "product": "mf",
+    "last4": "3084",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0121",
+  "split": "test"
+ },
+ {
+  "user_id": "U0122",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "1002",
+    "premium": 12000
+   },
+   {
+    "product": "mf",
+    "last4": "7414",
+    "premium": 60000
+   }
+  ],
+  "name": "customer_0122",
+  "split": "train"
+ },
+ {
+  "user_id": "U0123",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "4666",
+    "premium": 18000
+   },
+   {
+    "product": "ulip",
+    "last4": "3491",
+    "premium": 60000
+   },
+   {
+    "product": "term",
+    "last4": "2784",
+    "premium": 5000
+   }
+  ],
+  "name": "customer_0123",
+  "split": "val"
+ },
+ {
+  "user_id": "U0124",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "1647",
+    "premium": 12000
+   },
+   {
+    "product": "term",
+    "last4": "3058",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0124",
+  "split": "test"
+ },
+ {
+  "user_id": "U0125",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "3096",
+    "premium": 5000
+   },
+   {
+    "product": "endow",
+    "last4": "5125",
+    "premium": 60000
+   }
+  ],
+  "name": "customer_0125",
+  "split": "test"
+ },
+ {
+  "user_id": "U0126",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "2152",
+    "premium": 24000
+   },
+   {
+    "product": "mf",
+    "last4": "9592",
+    "premium": 60000
+   }
+  ],
+  "name": "customer_0126",
+  "split": "train"
+ },
+ {
+  "user_id": "U0127",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "4663",
+    "premium": 60000
+   }
+  ],
+  "name": "customer_0127",
+  "split": "train"
+ },
+ {
+  "user_id": "U0128",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "5940",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0128",
+  "split": "train"
+ },
+ {
+  "user_id": "U0129",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "4970",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0129",
+  "split": "test"
+ },
+ {
+  "user_id": "U0130",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "1479",
+    "premium": 36000
+   },
+   {
+    "product": "ulip",
+    "last4": "6036",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0130",
+  "split": "train"
+ },
+ {
+  "user_id": "U0131",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "7881",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0131",
+  "split": "val"
+ },
+ {
+  "user_id": "U0132",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "7065",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0132",
+  "split": "train"
+ },
+ {
+  "user_id": "U0133",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "6936",
+    "premium": 5000
+   },
+   {
+    "product": "pension",
+    "last4": "7493",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0133",
+  "split": "test"
+ },
+ {
+  "user_id": "U0134",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "9271",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0134",
+  "split": "test"
+ },
+ {
+  "user_id": "U0135",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "6107",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0135",
+  "split": "val"
+ },
+ {
+  "user_id": "U0136",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "5342",
+    "premium": 24000
+   }
+  ],
+  "name": "customer_0136",
+  "split": "val"
+ },
+ {
+  "user_id": "U0137",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "9122",
+    "premium": 60000
+   }
+  ],
+  "name": "customer_0137",
+  "split": "test"
+ },
+ {
+  "user_id": "U0138",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "8947",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0138",
+  "split": "val"
+ },
+ {
+  "user_id": "U0139",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "1890",
+    "premium": 18000
+   },
+   {
+    "product": "ulip",
+    "last4": "1387",
+    "premium": 60000
+   },
+   {
+    "product": "pension",
+    "last4": "3325",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0139",
+  "split": "train"
+ },
+ {
+  "user_id": "U0140",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "4016",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0140",
+  "split": "test"
+ },
+ {
+  "user_id": "U0141",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "2300",
+    "premium": 18000
+   },
+   {
+    "product": "term",
+    "last4": "6394",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0141",
+  "split": "train"
+ },
+ {
+  "user_id": "U0142",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "8661",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0142",
+  "split": "train"
+ },
+ {
+  "user_id": "U0143",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "7125",
+    "premium": 24000
+   }
+  ],
+  "name": "customer_0143",
+  "split": "train"
+ },
+ {
+  "user_id": "U0144",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "2281",
+    "premium": 24000
+   },
+   {
+    "product": "mf",
+    "last4": "2323",
+    "premium": 24000
+   }
+  ],
+  "name": "customer_0144",
+  "split": "train"
+ },
+ {
+  "user_id": "U0145",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "7228",
+    "premium": 24000
+   },
+   {
+    "product": "ulip",
+    "last4": "6057",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0145",
+  "split": "train"
+ },
+ {
+  "user_id": "U0146",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "4206",
+    "premium": 24000
+   }
+  ],
+  "name": "customer_0146",
+  "split": "train"
+ },
+ {
+  "user_id": "U0147",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "6297",
+    "premium": 24000
+   },
+   {
+    "product": "ulip",
+    "last4": "8774",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0147",
+  "split": "val"
+ },
+ {
+  "user_id": "U0148",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "1666",
+    "premium": 36000
+   },
+   {
+    "product": "pension",
+    "last4": "1571",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0148",
+  "split": "test"
+ },
+ {
+  "user_id": "U0149",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "5210",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0149",
+  "split": "train"
+ },
+ {
+  "user_id": "U0150",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "6946",
+    "premium": 24000
+   },
+   {
+    "product": "endow",
+    "last4": "6488",
+    "premium": 60000
+   }
+  ],
+  "name": "customer_0150",
+  "split": "train"
+ },
+ {
+  "user_id": "U0151",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "5515",
+    "premium": 24000
+   }
+  ],
+  "name": "customer_0151",
+  "split": "val"
+ },
+ {
+  "user_id": "U0152",
+  "policies": [
+   {
+    "product": "mf",
+    "last4": "2070",
+    "premium": 12000
+   }
+  ],
+  "name": "customer_0152",
+  "split": "train"
+ },
+ {
+  "user_id": "U0153",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "8630",
+    "premium": 36000
+   },
+   {
+    "product": "pension",
+    "last4": "5113",
+    "premium": 36000
+   },
+   {
+    "product": "endow",
+    "last4": "9085",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0153",
+  "split": "test"
+ },
+ {
+  "user_id": "U0154",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "5969",
+    "premium": 5000
+   },
+   {
+    "product": "term",
+    "last4": "3479",
+    "premium": 60000
+   },
+   {
+    "product": "endow",
+    "last4": "4868",
+    "premium": 24000
+   }
+  ],
+  "name": "customer_0154",
+  "split": "test"
+ },
+ {
+  "user_id": "U0155",
+  "policies": [
+   {
+    "product": "pension",
+    "last4": "2294",
+    "premium": 60000
+   },
+   {
+    "product": "endow",
+    "last4": "4232",
+    "premium": 36000
+   },
+   {
+    "product": "mf",
+    "last4": "3620",
+    "premium": 18000
+   }
+  ],
+  "name": "customer_0155",
+  "split": "train"
+ },
+ {
+  "user_id": "U0156",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "9922",
+    "premium": 24000
+   },
+   {
+    "product": "pension",
+    "last4": "3632",
+    "premium": 36000
+   }
+  ],
+  "name": "customer_0156",
+  "split": "train"
+ },
+ {
+  "user_id": "U0157",
+  "policies": [
+   {
+    "product": "term",
+    "last4": "2377",
+    "premium": 18000
+   },
+   {
+    "product": "endow",
+    "last4": "2579",
+    "premium": 36000
+   },
+   {
+    "product": "pension",
+    "last4": "9167",
+    "premium": 5000
+   }
+  ],
+  "name": "customer_0157",
+  "split": "train"
+ },
+ {
+  "user_id": "U0158",
+  "policies": [
+   {
+    "product": "ulip",
+    "last4": "7829",
+    "premium": 36000
+   },
+   {
+    "product": "mf",
+    "last4": "4849",
+    "premium": 5000
+   },
+   {
+    "product": "term",
+    "last4": "9823",
+    "premium": 5000
+   }
+  ],
+  "name": "customer_0158",
+  "split": "train"
+ },
+ {
+  "user_id": "U0159",
+  "policies": [
+   {
+    "product": "endow",
+    "last4": "5577",
+    "premium": 60000
+   },
+   {
+    "product": "mf",
+    "last4": "5385",
+    "premium": 24000
+   }
+  ],
+  "name": "customer_0159",
+  "split": "test"
+ }
+]

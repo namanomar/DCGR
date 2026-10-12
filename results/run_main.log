@@ -1,0 +1,208 @@
+tfidf bm25 R@1=0.641 nDCG=0.775 (132s)
+tfidf dense R@1=0.609 nDCG=0.740 (8s)
+tfidf hybrid_rrf R@1=0.640 nDCG=0.767 (10s)
+tfidf hybrid_w R@1=0.648 nDCG=0.775 (9s)
+minilm bm25 R@1=0.654 nDCG=0.795 (34s)
+minilm dense R@1=0.748 nDCG=0.837 (4s)
+minilm hybrid_rrf R@1=0.743 nDCG=0.844 (8s)
+minilm hybrid_w R@1=0.745 nDCG=0.849 (5s)
+bge-small bm25 R@1=0.658 nDCG=0.796 (20s)
+bge-small dense R@1=0.714 nDCG=0.816 (5s)
+bge-small hybrid_rrf R@1=0.737 nDCG=0.841 (4s)
+bge-small hybrid_w R@1=0.742 nDCG=0.848 (4s)
+`torch_dtype` is deprecated! Use `dtype` instead!
+qwen3-emb bm25 R@1=0.667 nDCG=0.804 (114s)
+qwen3-emb dense R@1=0.817 nDCG=0.892 (6s)
+qwen3-emb hybrid_rrf R@1=0.783 nDCG=0.875 (5s)
+qwen3-emb hybrid_w R@1=0.792 nDCG=0.881 (5s)
+e5-large bm25 R@1=0.672 nDCG=0.808 (175s)
+e5-large dense R@1=0.797 nDCG=0.872 (7s)
+e5-large hybrid_rrf R@1=0.766 nDCG=0.863 (5s)
+e5-large hybrid_w R@1=0.773 nDCG=0.870 (5s)
+gte-large bm25 R@1=0.653 nDCG=0.790 (168s)
+gte-large dense R@1=0.743 nDCG=0.841 (7s)
+gte-large hybrid_rrf R@1=0.747 nDCG=0.845 (6s)
+gte-large hybrid_w R@1=0.755 nDCG=0.850 (5s)
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:13<00:13, 13.40s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:22<00:00, 10.95s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:22<00:00, 11.33s/it]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:10<00:10, 10.47s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:17<00:00,  8.64s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:17<00:00,  8.91s/it]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:08<00:08,  8.32s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:15<00:00,  7.77s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:15<00:00,  7.90s/it]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:08<00:08,  8.55s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:14<00:00,  6.79s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:14<00:00,  7.05s/it]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:06<00:06,  6.94s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:13<00:00,  6.82s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:13<00:00,  6.84s/it]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:06<00:06,  6.99s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:13<00:00,  6.83s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:13<00:00,  6.89s/it]
+qwen3-emb-4b bm25 R@1=0.672 nDCG=0.814 (582s)
+qwen3-emb-4b dense R@1=0.852 nDCG=0.919 (10s)
+qwen3-emb-4b hybrid_rrf R@1=0.804 nDCG=0.891 (6s)
+qwen3-emb-4b hybrid_w R@1=0.813 nDCG=0.900 (5s)
+[saved] embed
+bm25 R@1=0.667 nDCG=0.804 ms=0.6
+bm25+rerank R@1=0.752 nDCG=0.848 ms=0.8
+dense R@1=0.817 nDCG=0.892 ms=0.6
+dense+rerank R@1=0.758 nDCG=0.857 ms=2.3
+hybrid_rrf R@1=0.783 nDCG=0.875 ms=0.7
+hybrid_rrf+rerank R@1=0.757 nDCG=0.856 ms=2.2
+hybrid_w R@1=0.792 nDCG=0.881 ms=0.8
+hybrid_w+rerank R@1=0.756 nDCG=0.854 ms=1.9
+naive-bm25 R@1=0.518
+naive-dense R@1=0.601
+naive-hybrid_rrf R@1=0.605
+[saved] search
+latest message only (naive) R@1=0.605 MRR=0.711
+last-4 events concat (naive) R@1=0.253 MRR=0.419
+last-12 user history (naive) R@1=0.143 MRR=0.269
+last-4 concat + gate R@1=0.253 MRR=0.419
+structured task state (DCGR) R@1=0.783 MRR=0.850
+oracle context (gold product + referent) R@1=0.853 MRR=0.910
+[saved] context
+DCGR (full) R@1=0.783 nDCG=0.875 calls=47.9
+- gate (retrieve on every event) R@1=0.778 nDCG=0.871 calls=80.4
+- task clustering (single rolling ctx) R@1=0.740 nDCG=0.823 calls=47.9
+- constraint memory (no product slot/profile) R@1=0.645 nDCG=0.807 calls=47.9
+- notification linking R@1=0.753 nDCG=0.860 calls=47.9
+- freshness filter R@1=0.722 nDCG=0.845 calls=47.9
+- product metadata filter R@1=0.757 nDCG=0.868 calls=47.9
+- hybrid (BM25 only) R@1=0.667 nDCG=0.804 calls=47.9
+- hybrid (dense only) R@1=0.817 nDCG=0.892 calls=47.9
++ cross-encoder rerank R@1=0.757 nDCG=0.856 calls=47.9
+- gate - tasks - constraints - notif R@1=0.633 nDCG=0.795 calls=80.4
+naive baseline (all layers removed) R@1=0.605 nDCG=0.764 calls=80.4
+[saved] ablation
+noise=0 naive (latest only) R@1=0.605 R@5=0.862 calls=1424
+noise=0 naive (last-4 concat) R@1=0.253 R@5=0.660 calls=1424
+noise=0 DCGR no-gate R@1=0.778 R@5=0.938 calls=1424
+noise=0 DCGR no-notif-link R@1=0.753 R@5=0.934 calls=848
+noise=0 DCGR (full) R@1=0.783 R@5=0.939 calls=848
+noise=0.5 naive (latest only) R@1=0.605 R@5=0.862 calls=1821
+noise=0.5 naive (last-4 concat) R@1=0.258 R@5=0.624 calls=1821
+noise=0.5 DCGR no-gate R@1=0.772 R@5=0.929 calls=1821
+noise=0.5 DCGR no-notif-link R@1=0.752 R@5=0.934 calls=899
+noise=0.5 DCGR (full) R@1=0.781 R@5=0.939 calls=899
+noise=1 naive (latest only) R@1=0.605 R@5=0.862 calls=2196
+noise=1 naive (last-4 concat) R@1=0.263 R@5=0.588 calls=2196
+noise=1 DCGR no-gate R@1=0.758 R@5=0.918 calls=2196
+noise=1 DCGR no-notif-link R@1=0.752 R@5=0.933 calls=860
+noise=1 DCGR (full) R@1=0.775 R@5=0.930 calls=860
+noise=2 naive (latest only) R@1=0.605 R@5=0.862 calls=2901
+noise=2 naive (last-4 concat) R@1=0.257 R@5=0.555 calls=2901
+noise=2 DCGR no-gate R@1=0.743 R@5=0.898 calls=2901
+noise=2 DCGR no-notif-link R@1=0.753 R@5=0.934 calls=853
+noise=2 DCGR (full) R@1=0.773 R@5=0.929 calls=853
+noise=3 naive (latest only) R@1=0.605 R@5=0.862 calls=3648
+noise=3 naive (last-4 concat) R@1=0.212 R@5=0.509 calls=3648
+noise=3 DCGR no-gate R@1=0.726 R@5=0.879 calls=3648
+noise=3 DCGR no-notif-link R@1=0.751 R@5=0.932 calls=1051
+noise=3 DCGR (full) R@1=0.767 R@5=0.922 calls=1051
+[saved] noise
+LLM rewrite of last-6 events (no gate) [Qwen3-0.6B] R@1=0.558 llm_calls_new=1398 (612s)
+LLM rewrite + gate [Qwen3-0.6B] R@1=0.558 llm_calls_new=0 (5s)
+Traceback (most recent call last):
+  File "/home/namano/Downloads/convo-retrieval-icici/scripts/run_experiments.py", line 199, in <module>
+    STAGES[s]()
+  File "/home/namano/Downloads/convo-retrieval-icici/scripts/run_experiments.py", line 144, in stage_llm
+    r = slim(run_config(cfg, llm=llm))
+  File "/home/namano/Downloads/convo-retrieval-icici/src/evaluate.py", line 47, in run_config
+    recs = pipe.run_user(uidx[u], cx["users"][u])
+  File "/home/namano/Downloads/convo-retrieval-icici/src/pipeline.py", line 279, in run_user
+    q = self.llm_query(resolver_prompt(ctx_tasks, [n for n in nbuf if i - n["idx"] < 40 and n["family"] == fam or not c.gate][-2:] if c.notif else [], text), REWRITE_SYS)
+  File "/home/namano/Downloads/convo-retrieval-icici/src/llm.py", line 89, in resolver_prompt
+    nl = [f"- \"{n['text'][:110]}\"" for n in notifs[-2:]]
+  File "/home/namano/Downloads/convo-retrieval-icici/src/llm.py", line 89, in <listcomp>
+    nl = [f"- \"{n['text'][:110]}\"" for n in notifs[-2:]]
+KeyError: 'text'
+LLM rewrite of last-6 events (no gate) [Qwen3-0.6B] R@1=0.558 llm_calls_new=0 (87s)
+LLM rewrite + gate [Qwen3-0.6B] R@1=0.558 llm_calls_new=0 (4s)
+`torch_dtype` is deprecated! Use `dtype` instead!
+DCGR + selective LLM resolver [Qwen3-0.6B] R@1=0.770 llm_calls_new=168 (106s)
+[saved] llm
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:11<00:11, 11.02s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:12<00:00,  5.47s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:12<00:00,  6.30s/it]
+LLM rewrite of last-6 events (no gate) [Qwen3-1.7B] R@1=0.552 llm_calls_new=1398 (599s)
+LLM rewrite + gate [Qwen3-1.7B] R@1=0.552 llm_calls_new=0 (5s)
+DCGR + selective LLM resolver [Qwen3-1.7B] R@1=0.761 llm_calls_new=169 (77s)
+[saved] llm
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:12<00:24, 12.26s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:26<00:13, 13.65s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:27<00:00,  7.63s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:27<00:00,  9.11s/it]
+LLM rewrite of last-6 events (no gate) [Qwen3-4B] R@1=0.598 llm_calls_new=1398 (827s)
+LLM rewrite + gate [Qwen3-4B] R@1=0.598 llm_calls_new=0 (7s)
+DCGR + selective LLM resolver [Qwen3-4B] R@1=0.777 llm_calls_new=169 (104s)
+[saved] llm
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:30<00:30, 30.40s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:39<00:00, 17.83s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:39<00:00, 19.72s/it]
+LLM rewrite of last-6 events (no gate) [Qwen2.5-3B-Instruct] R@1=0.565 llm_calls_new=1398 (1081s)
+LLM rewrite + gate [Qwen2.5-3B-Instruct] R@1=0.565 llm_calls_new=0 (6s)
+DCGR + selective LLM resolver [Qwen2.5-3B-Instruct] R@1=0.783 llm_calls_new=169 (133s)
+[saved] llm
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:16<00:16, 16.91s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:26<00:00, 12.62s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:26<00:00, 13.26s/it]
+LLM rewrite of last-6 events (no gate) [Phi-3.5-mini-instruct] R@1=0.542 llm_calls_new=1398 (1015s)
+LLM rewrite + gate [Phi-3.5-mini-instruct] R@1=0.542 llm_calls_new=0 (6s)
+DCGR + selective LLM resolver [Phi-3.5-mini-instruct] R@1=0.793 llm_calls_new=169 (174s)
+[saved] llm
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+/home/namano/miniconda3/lib/python3.10/site-packages/sklearn/metrics/cluster/_supervised.py:50: UserWarning: The number of unique classes is greater than 50% of the number of samples. `y` could represent a regression problem, not a classification problem.
+  type_pred = type_of_target(labels_pred)
+[saved] cluster
+naive {'R@1': 0.605, 'R@5': 0.862, 'MRR@10': 0.711, 'nDCG@10': 0.764}
+naive-concat {'R@1': 0.253, 'R@5': 0.66, 'MRR@10': 0.419, 'nDCG@10': 0.503}
+DCGR {'R@1': 0.783, 'R@5': 0.939, 'MRR@10': 0.85, 'nDCG@10': 0.875}
+[saved] bootstrap

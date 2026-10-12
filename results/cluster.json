@@ -1,0 +1,111 @@
+{
+ "grid": {
+  "val|online|taskonly|0.5": 0.25728206258148406,
+  "val|online|taskonly|0.6": 0.16504897550329128,
+  "val|online|taskonly|0.7": 0.03651630045831045,
+  "val|online|taskonly|0.8": 0.02561960489292934,
+  "val|online|fullstream|0.5": 0.25846835740093255,
+  "val|online|fullstream|0.6": 0.16897206079967322,
+  "val|online|fullstream|0.7": 0.036446364876188055,
+  "val|online|fullstream|0.8": 0.02561960489292934,
+  "val|online+recency|taskonly|0.5": 0.26105961703125635,
+  "val|online+recency|taskonly|0.6": 0.2648731822459652,
+  "val|online+recency|taskonly|0.7": 0.24402950321286906,
+  "val|online+recency|taskonly|0.8": 0.042183851632085094,
+  "val|online+recency|fullstream|0.5": 0.2660011761155044,
+  "val|online+recency|fullstream|0.6": 0.2686101203495938,
+  "val|online+recency|fullstream|0.7": 0.22241889133393342,
+  "val|online+recency|fullstream|0.8": 0.03388157565657027,
+  "val|agglo|taskonly|0.3": 0.03651630045831045,
+  "val|agglo|taskonly|0.4": 0.12501846576482606,
+  "val|agglo|taskonly|0.5": 0.26730476725470437,
+  "val|agglo|taskonly|0.6": 0.2594941558480412,
+  "val|agglo|taskonly|0.7": 0.2638646701806121,
+  "val|agglo|fullstream|0.3": 0.03381503937263116,
+  "val|agglo|fullstream|0.4": 0.11240338027479875,
+  "val|agglo|fullstream|0.5": 0.24103932886871438,
+  "val|agglo|fullstream|0.6": 0.2579702502655708,
+  "val|agglo|fullstream|0.7": 0.2645071941213982,
+  "val|hdbscan|taskonly|0": 0.2520903232419744,
+  "val|hdbscan|fullstream|0": 0.18421263708864558,
+  "test|online|taskonly|0.5": 0.25416079888287213,
+  "test|online|taskonly|0.6": 0.1858060261682584,
+  "test|online|taskonly|0.7": 0.055480102882741404,
+  "test|online|taskonly|0.8": 0.04341320340335283,
+  "test|online|fullstream|0.5": 0.26086162226146903,
+  "test|online|fullstream|0.6": 0.1808469227918997,
+  "test|online|fullstream|0.7": 0.05512630908138593,
+  "test|online|fullstream|0.8": 0.04341320340335283,
+  "test|online+recency|taskonly|0.5": 0.27161310235181396,
+  "test|online+recency|taskonly|0.6": 0.26998631968597364,
+  "test|online+recency|taskonly|0.7": 0.21974287512895166,
+  "test|online+recency|taskonly|0.8": 0.06982967687808188,
+  "test|online+recency|fullstream|0.5": 0.2725170540536458,
+  "test|online+recency|fullstream|0.6": 0.2722037501044941,
+  "test|online+recency|fullstream|0.7": 0.20765423464338462,
+  "test|online+recency|fullstream|0.8": 0.0635222341064222,
+  "test|agglo|taskonly|0.3": 0.05315511411169699,
+  "test|agglo|taskonly|0.4": 0.14581968410101506,
+  "test|agglo|taskonly|0.5": 0.2588583526306175,
+  "test|agglo|taskonly|0.6": 0.27376522783735896,
+  "test|agglo|taskonly|0.7": 0.27217619941347804,
+  "test|agglo|fullstream|0.3": 0.0544956995904548,
+  "test|agglo|fullstream|0.4": 0.14076462661813385,
+  "test|agglo|fullstream|0.5": 0.21902672328854994,
+  "test|agglo|fullstream|0.6": 0.27452250875238776,
+  "test|agglo|fullstream|0.7": 0.2721822831412968,
+  "test|hdbscan|taskonly|0": 0.25515472238412695,
+  "test|hdbscan|fullstream|0": 0.22171406124546203
+ },
+ "best": {
+  "online|taskonly": {
+   "param": "0.5",
+   "val_ARI": 0.25728206258148406,
+   "test_ARI": 0.25416079888287213
+  },
+  "online|fullstream": {
+   "param": "0.5",
+   "val_ARI": 0.25846835740093255,
+   "test_ARI": 0.26086162226146903
+  },
+  "online+recency|taskonly": {
+   "param": "0.6",
+   "val_ARI": 0.2648731822459652,
+   "test_ARI": 0.26998631968597364
+  },
+  "online+recency|fullstream": {
+   "param": "0.6",
+   "val_ARI": 0.2686101203495938,
+   "test_ARI": 0.2722037501044941
+  },
+  "agglo|taskonly": {
+   "param": "0.5",
+   "val_ARI": 0.26730476725470437,
+   "test_ARI": 0.2588583526306175
+  },
+  "agglo|fullstream": {
+   "param": "0.7",
+   "val_ARI": 0.2645071941213982,
+   "test_ARI": 0.2721822831412968
+  },
+  "hdbscan|taskonly": {
+   "param": "0",
+   "val_ARI": 0.2520903232419744,
+   "test_ARI": 0.25515472238412695
+  },
+  "hdbscan|fullstream": {
+   "param": "0",
+   "val_ARI": 0.18421263708864558,
+   "test_ARI": 0.22171406124546203
+  },
+  "DCGR family-aware (full)": {
+   "test_ARI": 0.7978839257266597
+  },
+  "DCGR without gate (noise enters clusters)": {
+   "test_ARI": 0.738321861796775
+  },
+  "DCGR without notification linking": {
+   "test_ARI": 0.7247093048944303
+  }
+ }
+}
